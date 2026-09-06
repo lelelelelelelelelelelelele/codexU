@@ -5,6 +5,7 @@ codexU v1.3.1 补齐独立 Windows x86_64 Tauri Dashboard，并收敛推理性�
 ## 主要更新
 
 - 完成 Windows Dashboard V0 的 Overview、Tasks、AI Leadership、Usage、Inference、Projects、Skills 和 Settings 八个 Web surface。
+- Windows app-server 子进程启动改用 `CREATE_NO_WINDOW`，首次打开或刷新读取额度时不弹出 CMD/命令行窗口，并保留 loopback 请求、读取错误处理和子进程清理。
 - Windows reader 只读取本机 Codex transcript、SQLite 和 automation 元数据，保持本地优先；不上传 usage、线程、路径、日志或账户数据。
 - 推理性能聚合支持本地统计时区和 DST 边界，使用有界流式读取、指纹缓存与共享刷新索引；缺失或非法事件不会被伪造成有效样本。
 - 固化 Windows glass surface 与语义 token、Playwright 合同/fixture、native exact-HWND 采集边界和 shell lifecycle 检查。
@@ -29,8 +30,8 @@ codexU v1.3.1 补齐独立 Windows x86_64 Tauri Dashboard，并收敛推理性�
 ```text
 SHA256_PLACEHOLDER  codexU-1.3.1-mac-arm64.dmg
 SHA256_PLACEHOLDER  codexU-1.3.1-mac-x86_64.dmg
-1601150420d7585f2e0dd6c45a46089058e9b4d533f18d5a51a9566550f739d2  codexU-1.3.1-windows-x86_64.msi
-373441695b6dad127915bb6ee4c9877fe48e4b6a130bc4e6bd5f9b76c5650413  codexU-1.3.1-windows-x86_64-setup.exe
+d511898277bdc20d77d321ce34d3c381cf7336b0440077c08da68eea2a79ea7d  codexU-1.3.1-windows-x86_64.msi
+9f5d2673faa091247233c60e7cde247ca5fe3b484bc8721960b53c24ae731415  codexU-1.3.1-windows-x86_64-setup.exe
 ```
 
 本版本的 macOS 签名、notarization 和 Windows 代码签名状态必须以实际构建结果为准；在正式发布前不得把未执行的签名或 notarization 描述为已完成。
